@@ -3,9 +3,18 @@ ObiXcode15BuildTest
 
 
 Obi got a runtime error on ios devices when the app is Compile and build on xcode 15.
+Product work fine under the same system setting when using xcode 14.3
 
+ystem：MacOS 13.4
+Devices M1 chip Macbook
+Unity Version: 2021.3.11 & 2021.3.21
+Obi Version : lastest
+
+Use Xcode 15 build on iOS 17 will break on void burst_initialize(void* i) { Staticburst_initialize(i); }.
+
+Use Xcode 15 build on iOS 16.3
 Please see this video:
-Compile is fine but runtime got error.
+Compile is fine but runtime got error：
 https://github.com/Cstedmund/ObiXcode15BuildTest/assets/92370517/b946bcb2-5190-4a02-9a62-d96d0d1ab6ab
 
 Error log:
