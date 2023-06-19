@@ -91,7 +91,7 @@ Timestamp: 2023-06-17T18:19:16+08:00
 ```
 
 Use Xcode 15 build on iOS 17 error log;
-
+```
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -196,4 +196,5 @@ Backtrace
 23  UIKitCore                           0x00000001a868c2b0 UIApplicationMain + 340
 24  UnityFramework                      0x0000000106aeb9ec -[UnityFramework runUIApplicationMainWithArgc:argv:] + 92
 25  Myproject                           0x000000010248012c main + 60
+```
 26  dyld                                0x00000001c8bc74f8 F480DCAC-5BC2-3AB7-A817-CAD4CB120667 + 87288
