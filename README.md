@@ -92,109 +92,57 @@ Timestamp: 2023-06-17T18:19:16+08:00
 
 Use Xcode 15 build on iOS 17 error log;
 ```
-[UnityMemory] Configuration Parameters - Can be set up in boot.config
-    "memorysetup-bucket-allocator-granularity=16"
-    "memorysetup-bucket-allocator-bucket-count=8"
-    "memorysetup-bucket-allocator-block-size=4194304"
-    "memorysetup-bucket-allocator-block-count=1"
-    "memorysetup-main-allocator-block-size=16777216"
-    "memorysetup-thread-allocator-block-size=16777216"
-    "memorysetup-gfx-main-allocator-block-size=16777216"
-    "memorysetup-gfx-thread-allocator-block-size=16777216"
-    "memorysetup-cache-allocator-block-size=4194304"
-    "memorysetup-typetree-allocator-block-size=2097152"
-    "memorysetup-profiler-bucket-allocator-granularity=16"
-    "memorysetup-profiler-bucket-allocator-bucket-count=8"
-    "memorysetup-profiler-bucket-allocator-block-size=4194304"
-    "memorysetup-profiler-bucket-allocator-block-count=1"
-    "memorysetup-profiler-allocator-block-size=16777216"
-    "memorysetup-profiler-editor-allocator-block-size=1048576"
-Built from '2021.3/staging' branch, Version '2021.3.21f1 (1b156197d683)', Build type 'Release', Scripting Backend 'il2cpp'
-    "memorysetup-temp-allocator-size-main=4194304"
-    "memorysetup-job-temp-allocator-block-size=2097152"
-    "memorysetup-job-temp-allocator-block-size-background=1048576"
-    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
-    "memorysetup-temp-allocator-size-background-worker=32768"
-    "memorysetup-temp-allocator-size-job-worker=262144"
-    "memorysetup-temp-allocator-size-preload-manager=262144"
-    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
-    "memorysetup-temp-allocator-size-audio-worker=65536"
-    "memorysetup-temp-allocator-size-cloud-worker=32768"
-    "memorysetup-temp-allocator-size-gfx=262144"
-MemoryManager: Using 'Default' Allocator.
-Thread Performance Checker: Thread running at QOS_CLASS_USER_INTERACTIVE waiting on a thread without a QoS class specified. Investigate ways to avoid priority inversions
-PID: 6159, TID: 364516
-Backtrace
-=================================================================
-3   UnityFramework                      0x0000000107453c98 _ZN12UnityClassic31Baselib_SystemSemaphore_AcquireENS_30Baselib_SystemSemaphore_HandleE + 28
-4   UnityFramework                      0x0000000106d9b2c0 _ZN9AGCThreadC2Ev + 204
-5   UnityFramework                      0x0000000106d94fb8 _ZN13AGCThreadPoolC2Ev + 148
-6   UnityFramework                      0x0000000106d9bdc0 _ZN29AssetGarbageCollectorInstanceC2Ev + 24
-7   UnityFramework                      0x0000000106e13604 _ZN17RuntimeStaticBase14InitializeImplEmPFPvS0_10MemLabelIdE + 88
-8   UnityFramework                      0x0000000106e0fe70 _ZN35RegisterRuntimeInitializeAndCleanup22ExecuteInitializationsEv + 220
-9   UnityFramework                      0x0000000106d97424 _Z17RuntimeInitializev + 80
-10  UnityFramework                      0x00000001072e3d08 UnityInitRuntime + 264
-11  UnityFramework                      0x0000000106aeb970 -[UnityFramework frameworkWarmup:argv:] + 36
-12  UnityFramework                      0x0000000106aeb9b8 -[UnityFramework runUIApplicationMainWithArgc:argv:] + 40
-13  Myproject                           0x000000010248012c main + 60
-14  dyld                                0x00000001c8bc74f8 F480DCAC-5BC2-3AB7-A817-CAD4CB120667 + 87288
+Thread 1 Queue : com.apple.main-thread (serial)
+#0    0x00000074a9bd57f6 in 0x74a9bd57f6 ()
+#1    0x0000000110cdb920 in burst.initialize.statics3 ()
+#2    0x0000000110d13340 in Staticburst_initialize ()
+#3    0x000000010ff327fc in ::burst_initialize(void *) at /Users/edmund/Desktop/Github/Oxford_XR_IS_Content/iosBuild/Libraries/lib_burst_generated.cpp:8
+#4    0x000000010ffcef44 in ::StaticResolve() at /Users/bokken/buildslave/unity/build/Runtime/Burst/Burst.cpp:1067
+#5    0x000000010ffce3f8 in ::CompileAsync() at /Users/bokken/buildslave/unity/build/Runtime/Burst/Burst.cpp:334
+#6    0x000000010ffcf570 in ::CompileAsyncDelegateMethod() at /Users/bokken/buildslave/unity/build/Runtime/Burst/BurstDelegateCache.cpp:45
+#7    0x000000010ff34b48 in ::BurstCompilerService_CUSTOM_CompileAsyncDelegateMethod() at /Users/bokken/buildslave/unity/build/artifacts/iOS/Modules/iOS_arm64_nondev_i_r/Bindings/CoreBindings.gen.cpp:11211
+#8    0x0000000113d022b4 in ::BurstCompilerService_CompileAsyncDelegateMethod_mDEA0EF934BF3674C1B47014A7518886D1DC2FE80(RuntimeObject *, String_t *, const RuntimeMethod *) at /Users/edmund/Desktop/Github/Oxford_XR_IS_Content/iosBuild/Classes/Native/UnityEngine.CoreModule.cpp:9991
+#9    0x0000000112aedfc4 in ::BurstCompilerHelper_IsCompiledByBurst_m0239AE7BCAF7076EE75C46D528F04AC34F3761DD(Delegate_t *, const RuntimeMethod *) at /Users/edmund/Desktop/Github/Oxford_XR_IS_Content/iosBuild/Classes/Native/Unity.Burst.cpp:7462
+#10    0x0000000112aee108 in ::BurstCompilerHelper__cctor_m2B57C7C8A7B5F4CEE1E1DE05C5FC63C10AE37FD3(const RuntimeMethod *) at /Users/edmund/Desktop/Github/Oxford_XR_IS_Content/iosBuild/Classes/Native/Unity.Burst.cpp:7490
+#11    0x000000010faab134 in RuntimeInvoker_FalseVoid_t4861ACF8F4594C3437BB48B6E56783494B843915(void (*)(), MethodInfo const*, void*, void**, void*) at /Users/edmund/Desktop/Github/Oxford_XR_IS_Content/iosBuild/Classes/Native/Il2CppInvokerTable.cpp:156544
+#12    0x0000000110c8186c in il2cpp::vm::Runtime::InvokeWithThrow(MethodInfo const*, void*, void**) at /Users/bokken/buildslave/unity/build/External/il2cpp/builds/libil2cpp/vm/Runtime.cpp:576
+#13    0x0000000110c816b4 in il2cpp::vm::Runtime::Invoke(MethodInfo const*, void*, void**, Il2CppException**) at /Users/bokken/buildslave/unity/build/External/il2cpp/builds/libil2cpp/vm/Runtime.cpp:562
+#14    0x0000000110c7fbf0 in il2cpp::vm::Runtime::ClassInit(Il2CppClass*) at /Users/bokken/buildslave/unity/build/External/il2cpp/builds/libil2cpp/vm/Runtime.cpp:917
+#15    0x000000010f4ef484 in il2cpp_codegen_runtime_class_init_inline(Il2CppClass*) at /Users/edmund/Desktop/Github/Oxford_XR_IS_Content/iosBuild/Libraries/libil2cpp/include/codegen/il2cpp-codegen-il2cpp.h:657
+#16    0x0000000112aec790 in ::BurstCompiler_Compile_m0038D8F2B6CB3915CB12F71E15B14C7355BFC8EF(RuntimeObject *, MethodInfo_t *, bool, bool, const RuntimeMethod *) at /Users/edmund/Desktop/Github/Oxford_XR_IS_Content/iosBuild/Classes/Native/Unity.Burst.cpp:6672
+#17    0x0000000112aec064 in ::BurstCompiler_CompileILPPMethod2_m545A8FC57B460871C1715F32DD601F2C1CA9C7FA(RuntimeMethodHandle_tB35B96E97214DCBE20B0B02B1E687884B34680B2, const RuntimeMethod *) at /Users/edmund/Desktop/Github/Oxford_XR_IS_Content/iosBuild/Classes/Native/Unity.Burst.cpp:6298
+#18    0x0000000112b98018 in ::Try_00000A42U24BurstDirectCall_Constructor_mB110B90A1753DDA76BEC765734BA51044BCA4EF3(const RuntimeMethod *) at /Users/edmund/Desktop/Github/Oxford_XR_IS_Content/iosBuild/Classes/Native/Unity.Collections.cpp:11701
+#19    0x0000000112b98078 in ::Try_00000A42U24BurstDirectCall__cctor_m3C84AC61BB336450883D955E604F084A18F335EE(const RuntimeMethod *) at /Users/edmund/Desktop/Github/Oxford_XR_IS_Content/iosBuild/Classes/Native/Unity.Collections.cpp:11718
+#20    0x000000010faab134 in RuntimeInvoker_FalseVoid_t4861ACF8F4594C3437BB48B6E56783494B843915(void (*)(), MethodInfo const*, void*, void**, void*) at /Users/edmund/Desktop/Github/Oxford_XR_IS_Content/iosBuild/Classes/Native/Il2CppInvokerTable.cpp:156544
+#21    0x0000000110c8186c in il2cpp::vm::Runtime::InvokeWithThrow(MethodInfo const*, void*, void**) at /Users/bokken/buildslave/unity/build/External/il2cpp/builds/libil2cpp/vm/Runtime.cpp:576
+#22    0x0000000110c816b4 in il2cpp::vm::Runtime::Invoke(MethodInfo const*, void*, void**, Il2CppException**) at /Users/bokken/buildslave/unity/build/External/il2cpp/builds/libil2cpp/vm/Runtime.cpp:562
+#23    0x0000000110c7fbf0 in il2cpp::vm::Runtime::ClassInit(Il2CppClass*) at /Users/bokken/buildslave/unity/build/External/il2cpp/builds/libil2cpp/vm/Runtime.cpp:917
+#24    0x000000010f4ef484 in il2cpp_codegen_runtime_class_init_inline(Il2CppClass*) at /Users/edmund/Desktop/Github/Oxford_XR_IS_Content/iosBuild/Libraries/libil2cpp/include/codegen/il2cpp-codegen-il2cpp.h:657
+#25    0x0000000112bf2974 in ::U24BurstDirectCallInitializer_Initialize_mBB7299DE1F1DF732C60394307234ED45AE14AD82(const RuntimeMethod *) at /Users/edmund/Desktop/Github/Oxford_XR_IS_Content/iosBuild/Classes/Native/Unity.Collections2.cpp:1726
+#26    0x000000010faab134 in RuntimeInvoker_FalseVoid_t4861ACF8F4594C3437BB48B6E56783494B843915(void (*)(), MethodInfo const*, void*, void**, void*) at /Users/edmund/Desktop/Github/Oxford_XR_IS_Content/iosBuild/Classes/Native/Il2CppInvokerTable.cpp:156544
+#27    0x0000000110c8186c in il2cpp::vm::Runtime::InvokeWithThrow(MethodInfo const*, void*, void**) at /Users/bokken/buildslave/unity/build/External/il2cpp/builds/libil2cpp/vm/Runtime.cpp:576
+#28    0x0000000110c816b4 in il2cpp::vm::Runtime::Invoke(MethodInfo const*, void*, void**, Il2CppException**) at /Users/bokken/buildslave/unity/build/External/il2cpp/builds/libil2cpp/vm/Runtime.cpp:562
+#29    0x000000011017f72c in ::scripting_method_invoke() at /Users/bokken/buildslave/unity/build/Runtime/ScriptingBackend/Il2Cpp/ScriptingApi_Il2Cpp.cpp:292
+#30    0x000000011018b160 in ::Invoke() at /Users/bokken/buildslave/unity/build/Runtime/Scripting/ScriptingInvocation.cpp:298
+#31    0x0000000110096330 in Invoke [inlined] at /Users/bokken/buildslave/unity/build/Runtime/Scripting/ScriptingInvocation.h:71
+#32    0x000000011009631c in ::Execute() at /Users/bokken/buildslave/unity/build/Runtime/Misc/RuntimeInitializeOnLoadManager.cpp:253
+#33    0x0000000110096250 in ::ExecuteInitializeOnLoad() at /Users/bokken/buildslave/unity/build/Runtime/Misc/RuntimeInitializeOnLoadManager.cpp:238
+#34    0x000000010fff7a74 in Invoke [inlined] at /Users/bokken/buildslave/unity/build/Runtime/Core/Callbacks/CallbackArray.h:70
+#35    0x000000010fff7a5c in ::Invoke() at /Users/bokken/buildslave/unity/build/Runtime/Core/Callbacks/CallbackArray.h:331
+#36    0x00000001100a1c90 in ::PlayerInitEngineGraphics() at /Users/bokken/buildslave/unity/build/Runtime/Misc/Player.cpp:523
+#37    0x00000001106f30a0 in UnityInitApplicationGraphics at /Users/bokken/buildslave/unity/build/PlatformDependent/iPhonePlayer/LibEntryPoint.mm:198
+#38    0x000000010f4d5228 in -[UnityAppController startUnity:] at /Users/edmund/Desktop/Github/Oxford_XR_IS_Content/iosBuild/Classes/UnityAppController.mm:121
+#39    0x00000001a5240c44 in __NSFireDelayedPerform ()
+#40    0x00000001a627399c in __CFRUNLOOP_IS_CALLING_OUT_TO_A_TIMER_CALLBACK_FUNCTION__ ()
+#41    0x00000001a6233d2c in __CFRunLoopDoTimer ()
+#42    0x00000001a61dd724 in __CFRunLoopDoTimers ()
+#43    0x00000001a6226518 in __CFRunLoopRun ()
+#44    0x00000001a622adb0 in CFRunLoopRunSpecific ()
+#45    0x00000001e7bc5224 in GSEventRunModal ()
+#46    0x00000001a868c64c in -[UIApplication _run] ()
+#47    0x00000001a868c2b0 in UIApplicationMain ()
+#48    0x0000000104d48610 in main at /Users/edmund/Desktop/Github/Education_ARVR/ios/MainApp/AppDelegate.swift:5
+#49    0x00000001c8bc74f8 in start ()
+Thread 2Thread 4Thread 5com.apple.uikit.eventfetch-thread (7)Thread 9com.apple.SwiftUI.AsyncRenderer (10)AssetGarbageCollectorHelper (11)AssetGarbageCollectorHelper (12)AssetGarbageCollectorHelper (13)AssetGarbageCollectorHelper (14)AssetGarbageCollectorHelper (15)GC Finalizer (16)Job.Worker 0 (17)Job.Worker 1 (18)Job.Worker 2 (19)Job.Worker 3 (20)Job.Worker 4 (21)Background Job.Worker 0 (22)Background Job.Worker 1 (23)Background Job.Worker 2 (24)Background Job.Worker 3 (25)Background Job.Worker 4 (26)Background Job.Worker 5 (27)Background Job.Worker 6 (28)Background Job.Worker 7 (29)Background Job.Worker 8 (30)Background Job.Worker 9 (31)Background Job.Worker 10 (32)Background Job.Worker 11 (33)Background Job.Worker 12 (34)Background Job.Worker 13 (35)Background Job.Worker 14 (36)Background Job.Worker 15 (37)BatchDeleteObjects (38)Loading.AsyncRead (39)caulk::deferred_logger (40)caulk.messenger.shared:high (41)Thread 42AURemoteIO::IOThread (43)Thread 44
 
--> applicationDidFinishLaunching()
--> applicationDidBecomeActive()
-
-[Subsystems] Discovering subsystems at path /private/var/containers/Bundle/Application/DB0286A6-D3AD-4600-A9A2-3399B0B7BD71/Myproject.app/Data/UnitySubsystems
-GfxDevice: creating device client; threaded=1; jobified=0
-Initializing Metal device caps: Apple A15 GPU
-Initialize engine version: 2021.3.21f1 (1b156197d683)
-Thread Performance Checker: Thread running at QOS_CLASS_USER_INTERACTIVE waiting on a thread without a QoS class specified. Investigate ways to avoid priority inversions
-PID: 6159, TID: 364516
-Backtrace
-=================================================================
-3   UnityFramework                      0x0000000107453c98 _ZN12UnityClassic31Baselib_SystemSemaphore_AcquireENS_30Baselib_SystemSemaphore_HandleE + 28
-4   UnityFramework                      0x0000000106f14ce4 _ZN15GfxDeviceClient22AcquireThreadOwnershipEv + 172
-5   UnityFramework                      0x0000000106f08d6c _Z21CreateClientGfxDevice17GfxDeviceRenderer20GfxCreateDeviceFlags + 252
-6   UnityFramework                      0x00000001071d7a2c _Z15CreateGfxDevice17GfxDeviceRenderer20GfxCreateDeviceFlags + 264
-7   UnityFramework                      0x00000001071d7ac4 _Z19InitializeGfxDevicev + 112
-8   UnityFramework                      0x00000001072e3ec0 UnityInitApplicationGraphics + 20
-9   UnityFramework                      0x0000000106ae6fc4 -[UnityAppController startUnity:] + 52
-10  Foundation                          0x00000001a5240c44 __NSFireDelayedPerform + 372
-11  CoreFoundation                      0x00000001a627399c 5580A260-85DE-375D-933E-4E6035C60CC1 + 825756
-12  CoreFoundation                      0x00000001a6233d2c 5580A260-85DE-375D-933E-4E6035C60CC1 + 564524
-13  CoreFoundation                      0x00000001a61dd724 5580A260-85DE-375D-933E-4E6035C60CC1 + 210724
-14  CoreFoundation                      0x00000001a6226518 5580A260-85DE-375D-933E-4E6035C60CC1 + 509208
-15  CoreFoundation                      0x00000001a622adb0 CFRunLoopRunSpecific + 600
-16  GraphicsServices                    0x00000001e7bc5224 GSEventRunModal + 164
-17  UIKitCore                           0x00000001a868c64c 72A228BE-E5ED-3515-A3EA-53DE3D120375 + 3741260
-18  UIKitCore                           0x00000001a868c2b0 UIApplicationMain + 340
-19  UnityFramework                      0x0000000106aeb9ec -[UnityFramework runUIApplicationMainWithArgc:argv:] + 92
-20  Myproject                           0x000000010248012c main + 60
-21  dyld                                0x00000001c8bc74f8 F480DCAC-5BC2-3AB7-A817-CAD4CB120667 + 87288
-Thread Performance Checker: Thread running at QOS_CLASS_USER_INTERACTIVE waiting on a thread without a QoS class specified. Investigate ways to avoid priority inversions
-PID: 6159, TID: 364516
-Backtrace
-=================================================================
-3   UnityFramework                      0x0000000107453c98 _ZN12UnityClassic31Baselib_SystemSemaphore_AcquireENS_30Baselib_SystemSemaphore_HandleE + 28
-4   UnityFramework                      0x0000000106d4aebc _ZN7Texture33VerifyFileTextureUploadCompletionEv + 1024
-5   UnityFramework                      0x0000000106d04db8 _ZN9Texture2D33VerifyFileTextureUploadCompletionEv + 80
-6   UnityFramework                      0x0000000106d04e60 _ZN9Texture2D13AwakeFromLoadE17AwakeFromLoadMode + 32
-7   UnityFramework                      0x0000000106ec27dc _ZN18AwakeFromLoadQueue28InvokePersistentManagerAwakeEPNS_4ItemEj17AwakeFromLoadModeb + 332
-8   UnityFramework                      0x0000000106ec25e0 _ZN18AwakeFromLoadQueue30PersistentManagerAwakeFromLoadEi17AwakeFromLoadModeb + 148
-9   UnityFramework                      0x0000000106ec4a04 _ZN17PersistentManager27IntegrateAllThreadedObjectsEv + 136
-10  UnityFramework                      0x0000000106ec6d28 _ZN17PersistentManager18LoadFileCompletelyEN4core16basic_string_refIcEE + 120
-11  UnityFramework                      0x0000000106cc6954 _Z24PlayerLoadGlobalManagersPKcS0_j + 504
-12  UnityFramework                      0x0000000106d96f14 _Z24PlayerInitEngineGraphicsb + 180
-13  UnityFramework                      0x00000001072e3ee8 UnityInitApplicationGraphics + 60
-14  UnityFramework                      0x0000000106ae6fc4 -[UnityAppController startUnity:] + 52
-15  Foundation                          0x00000001a5240c44 __NSFireDelayedPerform + 372
-16  CoreFoundation                      0x00000001a627399c 5580A260-85DE-375D-933E-4E6035C60CC1 + 825756
-17  CoreFoundation                      0x00000001a6233d2c 5580A260-85DE-375D-933E-4E6035C60CC1 + 564524
-18  CoreFoundation                      0x00000001a61dd724 5580A260-85DE-375D-933E-4E6035C60CC1 + 210724
-19  CoreFoundation                      0x00000001a6226518 5580A260-85DE-375D-933E-4E6035C60CC1 + 509208
-20  CoreFoundation                      0x00000001a622adb0 CFRunLoopRunSpecific + 600
-21  GraphicsServices                    0x00000001e7bc5224 GSEventRunModal + 164
-22  UIKitCore                           0x00000001a868c64c 72A228BE-E5ED-3515-A3EA-53DE3D120375 + 3741260
-23  UIKitCore                           0x00000001a868c2b0 UIApplicationMain + 340
-24  UnityFramework                      0x0000000106aeb9ec -[UnityFramework runUIApplicationMainWithArgc:argv:] + 92
-25  Myproject                           0x000000010248012c main + 60
 ```
-26  dyld                                0x00000001c8bc74f8 F480DCAC-5BC2-3AB7-A817-CAD4CB120667 + 87288
